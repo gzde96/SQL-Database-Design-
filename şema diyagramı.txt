@@ -1,0 +1,28 @@
++----------------+       +----------------+       +-------------------+
+|    members     |       |   kategoriler  |       |     egitimler     |
++----------------+       +----------------+       +-------------------+
+| PK kullanici_id|       | PK kategori_id |<----+ | PK egitim_id      |
+| UK kullanici_adi|      |   kategori_adi |     | |    adi            |
+| UK email       |       +----------------+     | |    aciklamasi     |
+|    sifre       |                              | |    baslangic_tarihi|
+|    kayit_tarihi|      +-------------------+   | |    bitis_tarihi    |
+|    ad          |      |  blog_gonderileri |   | |    egitmen_bilgisi |
+|    soyad       |      +-------------------+   | | FK kategori_id     |
++----------------+      | PK gonderi_id     |   | +-------------------+
+       ^                |    baslik         |   |         ^
+       |                |    icerik         |   |         |
+       |                |    yayin_tarihi   |   |         |
+       |                | FK yazar_id       |<--+         |
+       |                |    yazar_adi      |             |
+       |                +-------------------+             |
+       |                         ^                        |
+       |                         |                        |
++----------------+       +----------------+       +-------------------+
+|  katilimlar    |       | certifika_atama|       |    certifikalar    |
++----------------+       +----------------+       +-------------------+
+| PK katilim_id  |       | PK atama_id    |-----> | PK sertifika_id    |
+| FK kullanici_id|       | FK kullanici_id|       | UK sertifika_kodu  |
+| FK egitim_id   |       | FK egitim_id   |       |    verilis_tarihi  |
+|    katilim_tarihi|     | FK sertifika_id|       +-------------------+
++----------------+     |    alim_tarihi   |
+                       +-------------------+
