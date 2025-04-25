@@ -1,0 +1,32 @@
++----------------+       +----------------+       +-------------------+
+|    members     |       |   kategoriler  |       |     egitimler     |
++----------------+       +----------------+       +-------------------+
+| PK kullanici_id|       | PK kategori_id |<----+ | PK egitim_id      |
+| UK kullanici_adi|      |   kategori_adi |     | |    adi            |
+| UK email       |       +----------------+     | |    aciklamasi     |
+|    sifre       |                              | |    baslangic_tarihi|
+|    kayit_tarihi|                              | |    bitis_tarihi    |
+|    ad          |                              | |    egitmen_bilgisi |
+|    soyad       |                              | | FK kategori_id     |
++----------------+                              +-------------------+
+       ^                                               ^
+       |                                               |
+       |                                               |
++----------------+                              +-------------------+
+|  katilimlar    |                              | certifika_atamalari|
++----------------+                              +-------------------+
+| PK katilim_id  |                              | PK atama_id        |
+| FK kullanici_id|                              | FK kullanici_id    |
+| FK egitim_id   |                              | FK egitim_id       |
+|    katilim_tarihi|                            | FK certifika_id    |
++----------------+                              |    alim_tarihi     |
+                                                +-------------------+
+                                                         ^
+                                                         |
+                                                +-------------------+
+                                                |    certifikalar    |
+                                                +-------------------+
+                                                | PK certifika_id    |
+                                                | UK certifika_kodu  |
+                                                |    verilis_tarihi  |
+                                                +-------------------+
